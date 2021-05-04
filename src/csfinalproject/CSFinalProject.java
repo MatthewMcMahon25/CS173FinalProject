@@ -17,6 +17,7 @@ public class CSFinalProject {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Welcome to the online C-Store");
+        System.out.println("This is a test");
     }
     
 }
