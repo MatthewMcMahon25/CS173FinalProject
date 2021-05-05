@@ -40,6 +40,12 @@ public class CSFinalProject {
         
         //Split each line into individual parts based on ","
         
+        //for loop
+        //Based upon position in array, set that to a food array, possibly hashmap
+        //where you have [foodName, calories, protein, fats, carbs, cost]
+        
+        
+        
         food food1 = new food("Gatorade Bar", 330, 20, 10, 43, 4.30);
         
         System.out.println("Welcome to the online C-Store! What would you like to purchase: ");
