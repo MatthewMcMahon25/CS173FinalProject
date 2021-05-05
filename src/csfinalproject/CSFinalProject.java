@@ -29,9 +29,8 @@ public class CSFinalProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Welcome to the online C-Store");
-        System.out.println("This is a test");
-        String fileContents = readFileString("items.data");
+        System.out.println("Welcome to the online C-Store! What would you like to purchase: ");
+        String fileContents = readFileString("items.txt");
         System.out.println(fileContents);
     }
     
