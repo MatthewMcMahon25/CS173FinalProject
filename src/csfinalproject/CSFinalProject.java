@@ -5,12 +5,25 @@
  */
 package csfinalproject;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 /**
  *
  * @author macma
  */
 public class CSFinalProject {
-
+    
+    public static String readFileString(String path){
+        String result = "";
+        try {
+            result = Files.readString(Paths.get(path));
+        }catch(IOException e) {
+            System.err.println(e);
+        }
+        return result;
+    }
     /**
      * @param args the command line arguments
      */
