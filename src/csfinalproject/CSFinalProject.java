@@ -8,6 +8,7 @@ package csfinalproject;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -40,8 +41,8 @@ public class CSFinalProject {
         
         //Split each line into an item w/ contents into an array
         String[] lines = itemsData.split("\n");        
-        
-        //HashMap<String, HashMap<String, >> places = new HashMap<String, Hashmap<>>();
+                
+        HashMap<String, ArrayList<Food>> foodMap = new HashMap<>();
         
         //Split each line into individual parts based on ","
         for(String line: lines) {
@@ -52,23 +53,48 @@ public class CSFinalProject {
             System.out.println(Arrays.toString(values));
             
             String foodName = values[0];
-            int calories = Integer.parseInt(values[1]);
-            int protein = Integer.parseInt(values[2]);
-            int fat = Integer.parseInt(values[3]);
-            int carbs = Integer.parseInt(values[4]);
+            double calories = Double.parseDouble(values[1]);
+            double protein = Double.parseDouble(values[2]);
+            double fat = Double.parseDouble(values[3]);
+            double carbs = Double.parseDouble(values[4]);
             double cost = Double.parseDouble(values[5]);
-                  
-            Food f = new Food(foodName, calories, protein, fat, carbs, cost);
             
+            Food f = new Food(calories, protein, fat, carbs, cost);
+            ArrayList<Food> contents = new ArrayList<Food>();
+            
+            contents.add(f);        
+            foodMap.put(foodName, contents);
+           
         }
-        //for loop
-        //Based upon position in array, set that to a food array, possibly hashmap
-        //where you have [foodName, calories, protein, fats, carbs, cost]
+
+        System.out.println("Welcome to the online C-Store! Here are your options: ");
         
+        boolean hungry = true;
+        double totalCalories = 0;
+        double totalProtein = 0;
+        double totalFat = 0;
+        double totalCarbs = 0;
+        // do-while(hungry = true)
         
+        // Print out:
+        // Gatorade Bar - $2.67 
+        // Calories: 200g, Protein: 30g, Fat: 20g, Carbs: 50g
+        // etc.
         
-        System.out.println("Welcome to the online C-Store! What would you like to purchase: ");
+        //"Please select an item:" User input
         
+        //The current cost of your meal is $-.--
+        //Your current meal stats are: Calories: -g, Protein: -g, etc.
         
+        //do{
+        //"Are you still hungry, yes or no?" User input
+        // if userInput != "yes" or "no" --> 
+        //}while(hungryQuestion != yes // hungryQuestion !==no)
+        // if (userInput = "no"){
+        // hungry = false;
+        //}
+        
+        //Print out final stats
+        //"Thank you for using the online c-store
     }  
 }
